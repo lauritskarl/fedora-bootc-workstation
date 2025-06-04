@@ -5,9 +5,6 @@ RUN dnf install -y --allowerasing \
   @networkmanager-submodules \
   @multimedia \
   @printing \
-  @vagrant \
-  @vlc \
-  @system-tools \
   @workstation-product \
   @standard \
   @anaconda-tools \
