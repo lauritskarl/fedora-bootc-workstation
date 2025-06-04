@@ -17,12 +17,11 @@ RUN dnf install -y --allowerasing \
   @development-tools \
   @firefox \
   @fonts \
-  dnf-automatic \
   vim-default-editor \
   git \
   helix &&\
 	dnf clean all
 RUN systemctl set-default graphical.target
-RUN systemctl enable fstrim.timer dnf-automatic.timer
+RUN systemctl enable fstrim.timer
 RUN rm -rf /var/run
-RUN bootc container lint
+# RUN bootc container lint
