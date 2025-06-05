@@ -2,21 +2,8 @@ FROM quay.io/fedora/fedora-bootc:latest
 ADD etc etc
 RUN mkdir -p /var/roothome 
 RUN dnf install -y --allowerasing \
-  @networkmanager-submodules \
-  @multimedia \
-  @printing \
   @workstation-product \
-  @standard \
-  @anaconda-tools \
-  @base-graphical \
-  @desktop-accessibility \
-  @container-management \
-  @core \
-  @hardware-support \
   @gnome-desktop \
-  @development-tools \
-  @firefox \
-  @fonts \
   vim-default-editor \
   git \
   helix &&\
@@ -24,4 +11,4 @@ RUN dnf install -y --allowerasing \
 RUN systemctl set-default graphical.target
 RUN systemctl enable fstrim.timer
 RUN rm -rf /var/run
-# RUN bootc container lint
+RUN bootc container lint
