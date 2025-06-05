@@ -9,6 +9,6 @@ sudo podman run \
     -v $(pwd)/config.toml:/config.toml \
     -v $(pwd)/output:/output \
     quay.io/centos-bootc/bootc-image-builder:latest \
-    --type iso \
-    --config /config.toml \
-  ghcr.io/lauritskarl/fedora-bootc-workstation:latest
+    --type anaconda-iso \
+    --use-librepo=True \
+    ghcr.io/lauritskarl/fedora-bootc-workstation:latest
