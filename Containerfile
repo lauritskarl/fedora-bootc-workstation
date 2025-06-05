@@ -8,6 +8,8 @@ RUN dnf install -y \
   @networkmanager-submodules \
   @container-management \
   @development-tools \
+  @hardware-support \
+  rpi-imager \
   tailscale \
   helix \
   gh && \
