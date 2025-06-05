@@ -4,3 +4,9 @@ contents = """
 bootc switch --mutate-in-place --transport registry ghcr.io/lauritskarl/fedora-bootc-workstation:latest
 %end
 """
+
+# [[customizations.user]]
+# name = "karl"
+# password = "password"
+# key = "ssh-rsa AAA ... user@email.com"
+# groups = ["wheel"]
