@@ -28,6 +28,7 @@ jobs:
         with:
           image: ${{ env.IMAGE_NAME }}
           tags: latest ${{ github.sha }}
+          platforms: linux/amd64, linux/arm64
           containerfiles: ${{ env.CONTAINERFILE }}
       - name: Log in to GitHub Container registry
         uses: redhat-actions/podman-login@v1
