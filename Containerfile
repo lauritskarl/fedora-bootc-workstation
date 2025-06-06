@@ -6,6 +6,7 @@ RUN dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.rep
 RUN dnf copr enable atim/starship -y
 RUN dnf copr enable lihaohong/yazi -y
 RUN dnf copr enable atim/lazygit -y
+RUN dnf copr enable pgdev/ghostty -y
 RUN dnf install -y --allowerasing \
   @workstation-product \
   @gnome-desktop \
@@ -36,6 +37,7 @@ RUN dnf install -y --allowerasing \
   ffmpeg \
   ImageMagick \
   https://github.com/twpayne/chezmoi/releases/download/v2.62.6/chezmoi-2.62.6-x86_64.rpm \
+  ghostty \
   rpi-imager && \
   dnf clean all
 RUN systemctl enable tailscaled.service
