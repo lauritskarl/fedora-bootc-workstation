@@ -12,9 +12,10 @@ RUN dnf install -y --allowerasing \
   @workstation-product \
   @gnome-desktop \
   @networkmanager-submodules \
-  @container-management \
-  @development-tools \
+  @printing \
   @hardware-support \
+  @development-tools \
+  @container-management \
   vim-default-editor \
   fish \
   starship \
