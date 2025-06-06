@@ -1,6 +1,6 @@
 FROM quay.io/fedora/fedora-bootc:latest
 ADD etc etc
-RUN dnf install -y dnf-plugins-core
+RUN dnf install -y dnf5-plugins || dnf install -y dnf-plugins-core
 RUN dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 RUN dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
 RUN dnf copr enable atim/starship -y
