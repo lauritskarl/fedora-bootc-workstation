@@ -12,6 +12,6 @@ sudo podman run \
     -v $(pwd)/output:/output \
     quay.io/centos-bootc/bootc-image-builder:latest \
     --type anaconda-iso \
-    --rootfs btrfr \
+    --rootfs btrfs \
     --use-librepo=True \
     ghcr.io/lauritskarl/fedora-bootc-workstation:latest
