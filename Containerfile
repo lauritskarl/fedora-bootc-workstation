@@ -35,6 +35,7 @@ RUN dnf install -y --allowerasing \
   poppler \
   ffmpeg \
   ImageMagick \
+  https://github.com/twpayne/chezmoi/releases/download/v2.62.5/chezmoi-2.62.5-aarch64.rpm \
   rpi-imager && \
   dnf clean all
 RUN systemctl enable tailscaled.service
