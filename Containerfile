@@ -1,18 +1,41 @@
 FROM quay.io/fedora/fedora-bootc:latest
 ADD etc etc
-RUN dnf install -y dnf5-plugins
+RUN dnf install -y dnf-plugins-core
 RUN dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-RUN dnf install -y \
+RUN dnf config-manager addrepo --from-repofile=https://mise.jdx.dev/rpm/mise.repo
+RUN dnf copr enable atim/starship -y
+RUN dnf copr enable lihaohong/yazi -y
+RUN dnf copr enable atim/lazygit -y
+RUN dnf install -y --allowerasing \
   @workstation-product \
   @gnome-desktop \
   @networkmanager-submodules \
   @container-management \
   @development-tools \
   @hardware-support \
-  rpi-imager \
-  tailscale \
+  vim-default-editor \
+  fish \
+  starship \
+  yazi \
   helix \
-  gh && \
+  tailscale \
+  gh \
+  lazygit \
+  zoxide \
+  bat \
+  tealdeer \
+  fd \
+  ripgrep \
+  wl-clipboard \
+  mise \
+  cargo \
+  parallel \
+  p7zip \
+  jq \
+  poppler \
+  ffmpeg \
+  ImageMagick \
+  rpi-imager && \
   dnf clean all
 RUN systemctl enable tailscaled.service
 RUN systemctl set-default graphical.target

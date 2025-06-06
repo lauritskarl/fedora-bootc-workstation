@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-sudo bootc update
+sudo bootc upgrade --apply
